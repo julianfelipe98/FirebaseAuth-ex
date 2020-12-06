@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const items =document.querySelectorAll('.collapsible');
     M.Collapsible.init(items);
   });
+  //inner html info if the user is loggedin
   const setupPosts =data=>{
     if(data.length){
         let html ='';
@@ -26,4 +27,15 @@ document.addEventListener("DOMContentLoaded", function () {
         postList.innerHTML=`<h5 class="center-align red-text">INICIAR SESION</h5>`
     }
     
+}
+//validate nav links with session
+const loginCheck=(user)=>{
+  if(user){
+      loggedInLinks.forEach(link=>link.style.display='block');
+      loggedOutLinks.forEach(link=>link.style.display='none');
+  }else{
+      loggedInLinks.forEach(link=>link.style.display='none');
+      loggedOutLinks.forEach(link=>link.style.display='block');
+      
+  }
 }

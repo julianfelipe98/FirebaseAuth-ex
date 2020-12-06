@@ -40,7 +40,7 @@
                       </div>
                       <div class="row">
                         <div class="input-field col s12">
-                          <input id="email" type="email" class="validate" />
+                          <input id="email" type="email" class="validate" required />
                           <label for="email">Email</label>
                         </div>
                         <!-- <div class="input-field col s12">
@@ -54,6 +54,7 @@
                             id="password"
                             type="password"
                             class="validate"
+                            required
                           />
                           <label for="password">Password</label>
                         </div>
@@ -87,6 +88,7 @@
                             id="email-login"
                             type="email"
                             class="validate"
+                            required
                           />
                           <label for="email-login">Email</label>
                         </div>
@@ -97,6 +99,7 @@
                             id="password-login"
                             type="password"
                             class="validate"
+                            required
                           />
                           <label for="password-login">Password</label>
                         </div>
@@ -123,6 +126,49 @@
                 </div>
               </div>
             </li>
+           <li>
+            <a class="modal-trigger logged-in" href="#modal3" style="display: none;">Crear post</a>
+            <div id="modal3" class="modal">
+              <div class="modal-content">
+                <h4 class="blue-text center-align">Crear Post</h4>
+                <div class="row container">
+                  <form id="create-form" class="col s12">
+                    <div class="row">
+                      <div class="input-field col s12">
+                        <input
+                          id="post-field1"
+                          type="text"
+                          class="validate"
+                          required
+                        />
+                        <label for="post-field1">Titulo</label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="input-field col s12">
+                        <input
+                          id="post-field2"
+                          type="text"
+                          class="validate"
+                          required
+                        />
+                        <label for="post-field2">Descripcion</label>
+                      </div>
+                    </div>
+                    <div class="center-align">
+                      <div class="row">
+                        <button
+                        class="btn green accent-4  waves-effect col s12"
+                        type="submit"
+                      >
+                        Agregar
+                      </button>
+                      </div>
+                    </div>
+                  </form>
+              </div>
+            </div>
+           </li>
             <li><a id="logout" href="#" class="red-text logged-in" style="display: none;">Cerrar sesion</a></li>
           </ul>
           <ul class="sidenav" id="menu-responsive">

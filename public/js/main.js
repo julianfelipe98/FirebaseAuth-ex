@@ -1,5 +1,6 @@
 const singupForm=document.querySelector('#singup-form');
 const singinForm=document.querySelector('#login-form');
+const createForm=document.querySelector('#create-form');
 const logOut=document.querySelector('#logout');
 const googleBtn=document.querySelector('#google-auth');
 const facebookBtn=document.querySelector('#facebook-auth');
@@ -7,17 +8,8 @@ const loggedOutLinks=document.querySelectorAll('.logged-out');
 const loggedInLinks=document.querySelectorAll('.logged-in');
 const modal1=document.querySelector('#modal1');
 const modal2=document.querySelector('#modal2');
-//validate nav links with session
-const loginCheck=(user)=>{
-    if(user){
-        loggedInLinks.forEach(link=>link.style.display='block');
-        loggedOutLinks.forEach(link=>link.style.display='none');
-    }else{
-        loggedInLinks.forEach(link=>link.style.display='none');
-        loggedOutLinks.forEach(link=>link.style.display='block');
-        
-    }
-}
+const modal3=document.querySelector('#modal3');
+
 // preventDefault dont allow the default update from the form 
 //create new user in firebase auth
 singupForm.addEventListener("submit",(e)=>{
@@ -44,6 +36,17 @@ singinForm.addEventListener("submit",(e)=>{
             M.Modal.getInstance(modal2).close();
             console.log("sesion iniciada");
         }).catch((err)=>console.log(err))
+})
+createForm.addEventListener("submit",(e)=>{
+    e.preventDefault();
+    fs.collection('users').add({
+        nombre:createForm['post-field1'].value,
+        apellido:createForm['post-field2'].value
+    }).then(()=>{
+        console.log("added");
+        M.Modal.getInstance(modal3).close();
+        createForm.reset();
+    }).catch(err=> console.log(err))
 })
 //logout
 logOut.addEventListener('click',e =>{
@@ -83,7 +86,7 @@ auth.onAuthStateChanged((user) => {
     if (user) {
         console.log(user.email);
         //snapshot es donde vienen los datos de firestore
-        fs.collection('users').get().then((snapshot)=>{
+        fs.collection('users').onSnapshot((snapshot)=>{
             setupPosts(snapshot.docs)
             loginCheck(user);
         })
