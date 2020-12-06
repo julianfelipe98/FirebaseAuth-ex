@@ -1,10 +1,15 @@
-AUTH SIMPLE EXAMPLE USING FIREBASE AUTH 
-GOOGLE AUTH , FB AUTH , EMAIL AUTH&PASSWORD
-CSS FRAMEWORK MATERIALIZE 
+# Title / Firebase Auth Example
 
-INDEX REGISTER FORM IS JUST A USEFUL TEMPLATE , THE ONLY NEED DATA IS EMAIL AND PASSWORD
+## About / Synopsis
 
-GETTING STARTED
-1.clone repo 
-2.npm install 
-3.npm start
+* Simple Firebase auth example using Firebase auth
+* Google auth-Facebook auuth-Email&Password auth
+* CSS Framework-Materialize 
+
+
+## Getting started
+
+* Clone the repo https://github.com/julianfelipe98/FirebaseAuthEj
+* In de proyect directory : `npm install`
+* In de proyect directory : `npm start`
+
