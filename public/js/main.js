@@ -1,7 +1,6 @@
 const singupForm=document.querySelector('#singup-form');
 const singinForm=document.querySelector('#login-form');
 const logOut=document.querySelector('#logout');
-const postList=document.querySelector(".posts");
 const googleBtn=document.querySelector('#google-auth');
 const facebookBtn=document.querySelector('#facebook-auth');
 const loggedOutLinks=document.querySelectorAll('.logged-out');
@@ -19,7 +18,6 @@ const loginCheck=(user)=>{
         
     }
 }
-
 // preventDefault dont allow the default update from the form 
 //create new user in firebase auth
 singupForm.addEventListener("submit",(e)=>{
@@ -56,27 +54,7 @@ logOut.addEventListener('click',e =>{
 })
 //posts
 //user data format and inner in html file
-const setupPosts =data=>{
-    if(data.length){
-        let html ='';
-        data.forEach(user => {
-            const post=user.data();
-            console.log(post);
-            
-            const li=`
-            <li>
-                <div class="collapsible-header grey lighten-4">${post.nombre}</div>
-                <div class="collapsible-body white"><span>${post.apellido}</span></div>
-            </li>
-           `;
-            html+=li;
-        });
-        postList.innerHTML=html;
-    }else{
-        postList.innerHTML=`<h5 class="center-align red-text">INICIAR SESION</h5>`
-    }
-    
-}
+
 //google auth
 googleBtn.addEventListener('click',e=>{
     const provider=new firebase.auth.GoogleAuthProvider();
