@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-wrapper yellow darken-3">
+        <div class="container">
+          <a href="index.html" class="brand-logo">Viady</a>
+          <a href="#" data-target="menu-responsive" class="sidenav-trigger"
+            ><i class="fas fa-bars"></i
+          ></a>
+          <ul class="right hide-on-med-and-down">
+            <li>
+              <a
+                style="display: none;"
+                class="waves-effect waves-light modal-trigger green-text accent-4-text logged-out"
+                href="#modal1"
+                >Registrar</a
+              >
+              <div id="modal1" class="modal">
+                <div class="modal-content">
+                  <h4 class="green-text center-align">Formulario de registro</h4>
+                  <div class="row container">
+                    <form id="singup-form" class="col s12">
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input id="first_name" type="text" class="validate" />
+                          <label for="first_name">First Name</label>
+                        </div>
+                        <div class="input-field col s12">
+                          <input id="last_name" type="text" class="validate" />
+                          <label for="last_name">Last Name</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input id="email" type="email" class="validate" />
+                          <label for="email">Email</label>
+                        </div>
+                        <div class="input-field col s12">
+                          <input id="userName" type="text" class="validate" />
+                          <label for="userName">Username</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input
+                            id="password"
+                            type="password"
+                            class="validate"
+                          />
+                          <label for="password">Password</label>
+                        </div>
+                      </div>
+                      <div class="center-align">
+                        <button
+                          class="btn green accent-4 modal-close waves-effect"
+                          type="submit"
+                        >
+                          Registrar
+                        </button>
+                        <button class="btn red modal-close waves-effect">
+                          Cerrar
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a class="modal-trigger logged-out" href="#modal2" style="display: none;">Iniciar sesion</a>
+              <div id="modal2" class="modal">
+                <div class="modal-content">
+                  <h4 class="blue-text center-align">Iniciar sesion</h4>
+                  <div class="row container">
+                    <form id="login-form" class="col s12">
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input
+                            id="email-login"
+                            type="email"
+                            class="validate"
+                          />
+                          <label for="email-login">Email</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input
+                            id="password-login"
+                            type="password"
+                            class="validate"
+                          />
+                          <label for="password-login">Password</label>
+                        </div>
+                      </div>
+                      <div class="center-align">
+                        <div class="row">
+                          <button
+                          class="btn green accent-4 modal-close waves-effect col s12"
+                          type="submit"
+                        >
+                          Iniciar Sesion
+                        </button>
+                        </div>
+                      </div>
+                    </form>
+                    <div class="row">
+                      <button type="" id="google-auth" class="btn  light-blue lighten-4black-text modal-close waves-effect col s12">
+                        Iniciar sesion con Google
+                      </button>
+                      <button id="facebook-auth" class="btn light-blue darken-4 modal-close waves-effect col s12 section">
+                        Iniciar sesion con Facebook
+                      </button>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li><a id="logout" href="#" class="red-text logged-in" style="display: none;">Cerrar sesion</a></li>
+          </ul>
+          <ul class="sidenav" id="menu-responsive">
+            <li>
+              <a
+                class="waves-effect waves-light btn modal-trigger green accent-4"
+                href="#modal1"
+                >Registrar</a
+              >
+              <div id="modal1" class="modal">
+                <div class="modal-content">
+                  <h4 class="green-text">Usuario registrado</h4>
+                </div>
+                <div class="modal-footer">
+                  <a
+                    href="#!"
+                    class="modal-close waves-effect waves-green btn blue"
+                    >Agree</a
+                  >
+                </div>
+              </div>
+            </li>
+            <li><a href="register.html">Registrarse</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <h2 class="header container section center-align">Students</h2>
+    <div class="container center-align">
+        <div class="col">
+            <ul class="posts">
+            </ul>
+        </div>
+
+    </div>
+    <!-- MATERIALIZE SCRIPTS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        M.AutoInit();
+      });
+    </script>
+    <!-- FONTAWESOME SCRIPTS -->
+    <script
+      src="https://kit.fontawesome.com/37fd34e380.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- FIREBASE SCRIPTS -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyAxHouHAcoHKXESd3Vvzyrbkq3G5XaCW_s",
+        authDomain: "fb-auth-d1906.firebaseapp.com",
+        projectId: "fb-auth-d1906",
+        storageBucket: "fb-auth-d1906.appspot.com",
+        messagingSenderId: "292078384734",
+        appId: "1:292078384734:web:1cf5d23a0fee54aecd26cf",
+        measurementId: "G-YVWMX9G7XP",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const auth = firebase.auth();
+      const fs = firebase.firestore();
+      firebase.analytics();
+    </script>
+    <!-- my js -->
+    <script src="main.js"></script>
+  </body>
+</html>
