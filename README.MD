@@ -11,5 +11,5 @@
 
 * Clone the repo https://github.com/julianfelipe98/FirebaseAuthEj
 * In de proyect directory : `npm install`
-* In de proyect directory : `npm start`
+* In de proyect directory : `npm start PORT(choose the port that you want to use`
 
