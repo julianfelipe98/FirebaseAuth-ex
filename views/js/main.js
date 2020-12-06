@@ -59,15 +59,18 @@ const setupPosts =data=>{
         data.forEach(user => {
             const post=user.data();
             console.log(post);
-            const li=`<li>
-            <h5>${post.nombre}</h5>
-            <p>${post.apellido}</p>
-            </li>`;
+            
+            const li=`
+            <li>
+                <div class="collapsible-header grey lighten-4">${post.nombre}</div>
+                <div class="collapsible-body white"><span>${post.apellido}</span></div>
+            </li>
+           `;
             html+=li;
         });
         postList.innerHTML=html;
     }else{
-        postList.innerHTML=`<h6 class="center-align red-text">INICIAR SESION</h6>`
+        postList.innerHTML=`<h5 class="center-align red-text">INICIAR SESION</h5>`
     }
     
 }
