@@ -1,6 +1,6 @@
-# Title / Firebase Auth Example
+# Firebase Auth Example
 
-## About / Synopsis
+## About 
 
 * Simple Firebase auth example using Firebase auth
 * Google auth-Facebook auuth-Email&Password auth
