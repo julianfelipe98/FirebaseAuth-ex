@@ -3,6 +3,7 @@
       const firebaseConfig = {
         apiKey: "AIzaSyAxHouHAcoHKXESd3Vvzyrbkq3G5XaCW_s",
         authDomain: "fb-auth-d1906.firebaseapp.com",
+        databaseURL: "https://fb-auth-d1906-default-rtdb.firebaseio.com",
         projectId: "fb-auth-d1906",
         storageBucket: "fb-auth-d1906.appspot.com",
         messagingSenderId: "292078384734",
