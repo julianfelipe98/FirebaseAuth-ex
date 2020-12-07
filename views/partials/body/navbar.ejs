@@ -1,0 +1,16 @@
+<nav>
+    <div class="nav-wrapper yellow darken-3">
+      <div class="container">
+        <a href="index.html" class="brand-logo" style="font-family: cursive;"> <i class="fas fa-music right"></i>Viady</a>
+      
+        <ul class="right hide-on-med-and-down">
+            <%- include('./modal-resgister.ejs') %>
+            <%- include('./modal-login.ejs') %>
+            <%- include('./modal-create.ejs') %>
+         
+          <li><a id="logout" href="#" class="red-text logged-in" style="display: none;">Cerrar sesion</a></li>
+        </ul>
+        <%- include('./responsive-menu.ejs') %>
+      </div>
+    </div>
+  </nav>

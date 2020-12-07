@@ -90,6 +90,7 @@ auth.onAuthStateChanged((user) => {
             setupPosts(snapshot.docs)
             loginCheck(user);
         })
+        // .catch(err=>console.log(err.message));
     } else {
         setupPosts([]);
         loginCheck(user);

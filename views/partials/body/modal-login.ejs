@@ -1,0 +1,51 @@
+<li>
+    <a class="modal-trigger logged-out" href="#modal2" style="display: none;">Iniciar sesion</a>
+    <div id="modal2" class="modal">
+      <div class="modal-content">
+        <h4 class="blue-text center-align">Iniciar sesion</h4>
+        <div class="row container">
+          <form id="login-form" class="col s12">
+            <div class="row">
+              <div class="input-field col s12">
+                <input
+                  id="email-login"
+                  type="email"
+                  class="validate"
+                  required
+                />
+                <label for="email-login">Email</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input
+                  id="password-login"
+                  type="password"
+                  class="validate"
+                  required
+                />
+                <label for="password-login">Password</label>
+              </div>
+            </div>
+            <div class="center-align">
+              <div class="row">
+                <button
+                class="btn green accent-4  waves-effect col s12"
+                type="submit"
+              >
+                Iniciar Sesion
+              </button>
+              </div>
+            </div>
+          </form>
+          <div class="row">
+            <button type="" id="google-auth" class="btn  light-blue lighten-4black-text  waves-effect col s12">
+              Iniciar sesion con Google
+            </button>
+            <button id="facebook-auth" class="btn light-blue darken-4 waves-effect col s12 section">
+              Iniciar sesion con Facebook
+            </button>
+        </div>
+      </div>
+    </div>
+  </li>
