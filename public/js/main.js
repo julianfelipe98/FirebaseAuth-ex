@@ -1,6 +1,7 @@
 const singupForm=document.querySelector('#singup-form');
 const singinForm=document.querySelector('#login-form');
 const createForm=document.querySelector('#create-form');
+const accountInfo=document.querySelector('#account-info');
 const logOut=document.querySelector('#logout');
 const googleBtn=document.querySelector('#google-auth');
 const facebookBtn=document.querySelector('#facebook-auth');
@@ -9,6 +10,7 @@ const loggedInLinks=document.querySelectorAll('.logged-in');
 const modal1=document.querySelector('#modal1');
 const modal2=document.querySelector('#modal2');
 const modal3=document.querySelector('#modal3');
+const modal4=document.querySelector('#modal4');
 
 // preventDefault dont allow the default update from the form 
 //create new user in firebase auth
@@ -19,10 +21,17 @@ singupForm.addEventListener("submit",(e)=>{
     auth
         .createUserWithEmailAndPassword(email,password)
         .then(userCreedential=>{
+            //write in db the user id for load custom data
+            return fs.collection('userNames').doc(userCreedential.user.uid)
+            .set({
+                username:document.querySelector('#userName').value
+            });
+        }).then(()=>{
             singupForm.reset();
             console.log("Registrado")
             M.Modal.getInstance(modal1).close();
-        }).catch((err)=>console.log(err))
+
+        })
 })
 //login with email and password user 
 singinForm.addEventListener("submit",(e)=>{
@@ -55,17 +64,19 @@ logOut.addEventListener('click',e =>{
         console.log("signOut");
     })
 })
-//posts
-//user data format and inner in html file
-
 //google auth
 googleBtn.addEventListener('click',e=>{
     const provider=new firebase.auth.GoogleAuthProvider();
     auth.signInWithPopup(provider)
     .then(result=>{
-        console.log("google sign in");
-        M.Modal.getInstance(modal2).close();
-    }).catch((err)=>console.log(err))
+        return fs.collection('userNames').doc(result.user.uid)
+            .set({
+                username:"google account"
+            });
+        }).then(()=>{
+            console.log("google sign in");
+            M.Modal.getInstance(modal2).close();
+    })
 })
 //facebook auth
 facebookBtn.addEventListener('click', e => {
@@ -89,8 +100,7 @@ auth.onAuthStateChanged((user) => {
         fs.collection('users').onSnapshot((snapshot)=>{
             setupPosts(snapshot.docs)
             loginCheck(user);
-        })
-        // .catch(err=>console.log(err.message));
+        },err=>console.log(err))
     } else {
         setupPosts([]);
         loginCheck(user);

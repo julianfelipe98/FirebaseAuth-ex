@@ -28,12 +28,20 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     
 }
-//validate nav links with session
+//setting up the UI
 const loginCheck=(user)=>{
   if(user){
+      //añadir info al front de la db
+      fs.collection('userNames').doc(user.uid).get().then(doc=>{
+          const html=
+          `<div class="black-text align-center">logged in as ${user.email}</div>
+          <div class="black-text align-center">logged in as ${doc.data().username}</div>`
+          accountInfo.innerHTML=html;
+      })
       loggedInLinks.forEach(link=>link.style.display='block');
       loggedOutLinks.forEach(link=>link.style.display='none');
   }else{
+      accountInfo.innerHTML=''
       loggedInLinks.forEach(link=>link.style.display='none');
       loggedOutLinks.forEach(link=>link.style.display='block');
       
