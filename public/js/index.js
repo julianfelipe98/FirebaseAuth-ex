@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
     M.Modal.init(modals);
     const items =document.querySelectorAll('.collapsible');
     M.Collapsible.init(items);
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems);
   });
   //inner html info if the user is loggedin
   const setupPosts =data=>{

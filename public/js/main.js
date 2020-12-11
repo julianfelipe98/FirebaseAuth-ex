@@ -46,6 +46,7 @@ singinForm.addEventListener("submit",(e)=>{
             console.log("sesion iniciada");
         }).catch((err)=>console.log(err))
 })
+//storage the post data in the db
 createForm.addEventListener("submit",(e)=>{
     e.preventDefault();
     fs.collection('users').add({
