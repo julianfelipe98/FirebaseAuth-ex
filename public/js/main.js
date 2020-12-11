@@ -13,7 +13,7 @@ const modal3=document.querySelector('#modal3');
 const modal4=document.querySelector('#modal4');
 
 // preventDefault dont allow the default update from the form 
-//create new user in firebase auth
+//create new user in firebase auth with email and password
 singupForm.addEventListener("submit",(e)=>{
     e.preventDefault();
     const  email=document.querySelector('#email').value;
@@ -31,7 +31,7 @@ singupForm.addEventListener("submit",(e)=>{
             console.log("Registrado")
             M.Modal.getInstance(modal1).close();
 
-        })
+        }).catch(err=>window.alert(err))
 })
 //login with email and password user 
 singinForm.addEventListener("submit",(e)=>{
@@ -44,7 +44,7 @@ singinForm.addEventListener("submit",(e)=>{
             singupForm.reset();
             M.Modal.getInstance(modal2).close();
             console.log("sesion iniciada");
-        }).catch((err)=>console.log(err))
+        }).catch((err)=>window.alert(err))
 })
 //storage the post data in the db
 createForm.addEventListener("submit",(e)=>{
@@ -56,7 +56,7 @@ createForm.addEventListener("submit",(e)=>{
         console.log("added");
         M.Modal.getInstance(modal3).close();
         createForm.reset();
-    }).catch(err=> console.log(err))
+    }).catch(err=> window.alert(err))
 })
 //logout
 logOut.addEventListener('click',e =>{
