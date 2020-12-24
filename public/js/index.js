@@ -1,3 +1,5 @@
+
+/**dom access file */
 const postList=document.querySelector(".posts");
 //init materialize components 
 document.addEventListener("DOMContentLoaded", function () {

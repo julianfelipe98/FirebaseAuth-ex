@@ -1,3 +1,6 @@
+/**
+ * events 
+ */
 const singupForm=document.querySelector('#singup-form');
 const singinForm=document.querySelector('#login-form');
 const createForm=document.querySelector('#create-form');
