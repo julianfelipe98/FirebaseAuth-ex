@@ -2,9 +2,9 @@
 
 ## About 
 
-* Simple Firebase auth example using Firebase auth
-* Google auth-Facebook auuth-Email&Password auth
-* CSS Framework-Materialize 
+* Simple Firebase auth example using Firebase auth.
+* Google auth-Facebook auuth-Email&Password auth.
+* CSS Framework-Materialize.
 
 
 ## Getting started
